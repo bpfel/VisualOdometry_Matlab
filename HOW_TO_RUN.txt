@@ -1,0 +1,8 @@
+How to run our code:
+
+1. Navigate to the 'Code' folder.
+2. Execute 'setup.m'
+3. Open 'main.m'
+    a) Choose the desired dataset
+    b) Turn the desired plots on/off
+4. Run 'main.m' to run the pipeline.

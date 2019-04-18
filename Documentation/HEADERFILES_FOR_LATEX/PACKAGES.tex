@@ -1,0 +1,174 @@
+%This file contains all packages and relevant definitions coming with them
+%To use it add \input{../HEADERFILES_FOR_LATEX/PACKAGES} to the head of your file
+
+%----------------------------------------------------------------------------------------------
+%Typesetting
+%----------------------------------------------------------------------------------------------
+\usepackage[utf8]{inputenc} %To allow typesetting öäü
+
+%----------------------------------------------------------------------------------------------
+%Typesetting code
+%----------------------------------------------------------------------------------------------
+\usepackage{listings} %To allow nice typesetting of code
+
+%Usage:
+%Definition of all parameters defining the appearance of your code
+%\lstset{ 
+%	language=Matlab,% choose the language of the code
+%	basicstyle=10pt,% the size of the fonts that are used for the code
+%	numbers=left,% where to put the line-numbers
+%	numberstyle=\footnotesize,% the size of the fonts that are used for the line-numbers
+%	stepnumber=1,% the step between two line-numbers. If it's 1 each line will be numbered
+%	numbersep=5pt,% how far the line-numbers are from the code
+%	backgroundcolor=\color{SilverP},% choose the background color. You must add \usepackage{color}
+%	showspaces=false,% show spaces adding particular underscores
+%	showstringspaces=false,% underline spaces within strings
+%	showtabs=false,% show tabs within strings adding particular underscores
+% 	frame=single,% adds a frame around the code
+% 	tabsize=2,% sets default tabsize to 2 spaces
+% 	captionpos=t,% sets the caption-position to top
+%	breaklines=true,% sets automatic line breaking
+%	breakatwhitespace=false,% sets if automatic breaks should only happen at whitespace
+%	escapeinside={\%*}{*)}% if you want to add a comment within your code
+%}
+%How to use it inside your document:
+%\lstlistoflistings % To list all listings
+%
+%To input a whole file
+%\lstinputlisting[language=Matlab,caption = Main file, label = lst:MainFile]{Code/LDC.m}
+%
+%To input some lines of code
+%\begin{lstlisting
+%#include <iostream>
+%\end{lstlisting}
+
+
+%----------------------------------------------------------------------------------------------
+%Maths
+%----------------------------------------------------------------------------------------------
+\usepackage{amsmath} %Basic math package
+\usepackage{amssymb} %Special symbols
+\usepackage{siunitx} %Nice typesetting of numbers with units
+%Usage:
+%Use in math mode!
+%For a unit without a number: \si{\kilo\gram\per\second}
+%For a number with a unit: \SI{10e-12}{\nano\meter\per\second\squared}
+
+%----------------------------------------------------------------------------------------------
+%Formating
+%----------------------------------------------------------------------------------------------
+
+\usepackage[pdf]{graphviz}%Allows plotting graphs. Requires graphviz.
+%example: 
+%\digraph[scale=0.5]{abc}{rankdir=LR; a->b->c 
+%a [label=<foo<SUP>bar</SUP>>];}
+
+\usepackage{graphicx} %Placing of pictures
+%Usage:
+%\includegraphics[width=\linewidth]{<Name of picture in pictures without filetype extension/>}
+\graphicspath{ {pictures/} } %Allows to include pictures with only their name instead of the path
+
+\usepackage{multicol} %Dividing the page into multiple columns
+%Usage:
+%\begin{multicols}{<number of colums>}<your content>\end{multicols}
+
+\usepackage{wrapfig} %Allows to wrap text around figures
+%Usage:
+%\begin{wrapfigure}[<Number of narrow lines>]{<placement>}[<overhang in pt> pt]
+% <some figure>
+%\end{wrapfigure}
+
+\usepackage[table]{xcolor} %Allows the use of an array of colors
+%Option: table Load the colortbl package, in order to use the tools for coloring rows, columns, and cells within tables
+%Usage:
+%Change textcolor: \textcolor{<color>}{<text>}
+%Make a colorbox: \fcolorbox{<box color>{<background color>}{{<text>}} 
+
+\usepackage{booktabs} %Allows making nicer tables
+%Usage:
+%Make a nice horizontal midrule: \midrule
+
+\usepackage{float} %An improved environment for floating figures
+
+\usepackage{fancyhdr} %Allows manipulation of headers and footers
+
+\usepackage{blindtext} %Allows generation of blind text
+%Usage:
+%One paragraph of lorem ipsum: \blindtext
+%A certain number of paragraphs: \Blindtext[X][Y]
+%where X is the number of paragraphs and Y is the number of pangrams
+
+\usepackage{enumitem} %Allows configure enumerations and such
+%Usage:
+%\begin{itemize}[leftmargin=*,noitemsep,topsep=0pt]
+%\item <content>
+%\end{itemize}
+%This examples leaves away the margin on the left, sets the item seperation to zero and leaves away the
+%white space generated above an enumeration/itemization
+
+\usepackage{longtable, tabularx} %Allows the introduction of special columntypes for tabular environments
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}} % raggedleft column 
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}} % centered column
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}} % raggedright column
+%Usage:
+%\begin{tabular}{L{2cm}|L{2cm}|L{2cm}|L{3cm}|L{3cm}}
+%<content>
+%\end{tabular}
+
+\usepackage{lscape} %Allows the use of single landscape pages within a document in portrait orientation
+%Usage:
+%\begin{landscape}
+%<content>
+%\end{landscape}
+
+\usepackage[hidelinks]{hyperref} %allows for clickable references, doesn't colour the links
+
+\usepackage{pgfplots} %allows including specially exported .svg-figures
+%You want nice vector-graphics in your document that even have latex-fonts? Ask Gianni.
+%Also allows doing tikzpictures!
+%Usage:
+%\begin{tikzpicture}
+%\begin{axis}[
+%    axis lines = left,
+%    xlabel = {$h$ in $\si{mm}$},
+%    ylabel = {$C_{D\Theta,corrected}$},
+%]
+%\addplot [
+%    domain=5:45, 
+%    samples=100, 
+%    color=MyPomegranate,
+%]
+%{1.17*(1-0.25*8.93/x)};
+%\end{axis}
+%\end{tikzpicture}}
+
+
+%\usepackage[ %Allows importing your bibliography from another file
+%backend = biber,
+%style = ieee,
+%natbib = true,
+%url = true,
+%doi = false,
+%eprint = false,
+%]{biblatex}
+%Usage:
+%\addbibresource{<Absolute/Path/To/Your/.bib/file.bib>}
+%\printbiblbiography %Add this line where you'd like to print your bibliography
+
+%----------------------------------------------------------------------------------------------
+%LaTeX workarounds
+%----------------------------------------------------------------------------------------------
+
+\usepackage{xparse} %Allows to define new environments with arguments passed to the \end{env}-part
+%Consider reading: https://tex.stackexchange.com/questions/17036/why-cant-the-end-code-of-an-environment-contain-an-argument
+%Usage:
+%\NewDocumentEnvironment{foo}{m}
+%  {some code #1}
+%  {some code #1}
+
+%----------------------------------------------------------------------------------------------
+%Additions AIAA
+%----------------------------------------------------------------------------------------------
+\usepackage[version=4]{mhchem} %Allows using signs for chemical equations and other fancy stuff
+\usepackage{pdfpages} %To add pdf files
+\usepackage{appendix} %For appendix typesettings

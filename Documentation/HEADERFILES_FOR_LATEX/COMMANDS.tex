@@ -1,0 +1,171 @@
+%This file contains all commands simplifying LaTeX text editing
+%For each new command clearly document its dependencies (packages) and its use
+%Adhere to the ordering by category!
+
+%----------------------------------------------------------------------------------------------
+%Maths
+%----------------------------------------------------------------------------------------------
+\renewcommand{\vec}[1]{\boldsymbol{#1}} %Notation of vectors
+\newcommand{\vect}[1]{\dot{\boldsymbol{#1}}} %Notation of time derivative of a vector
+\newcommand{\vectt}[1]{\ddot{\boldsymbol{#1}}} %Notation of the second time derivative of a vector
+\newcommand{\vecd}[1]{\boldsymbol{#1'}} %Notation of the first derivative of a vector
+\newcommand{\vecdd}[1]{\boldsymbol{#1''}} 
+%In the following all vector definitions will be repeated with the inclusion of a prepended calligraphic letter to define the respective coordinate frame
+\newcommand{\cvec}[2]{{}_\mathcal{#1}\boldsymbol{#2}} %Notation of vectors
+\newcommand{\cvect}[2]{{}_\mathcal{#1}\dot{\boldsymbol{#2}}} %Notation of time derivative of a vector
+\newcommand{\cvectt}[2]{{}_\mathcal{#1}\boldsymbol{\ddot{#2}}} %Notation of the second time derivative of a vector
+\newcommand{\cvecd}[2]{{}_\mathcal{#1}\boldsymbol{#2'}} %Notation of the first derivative of a vector
+\newcommand{\cvecdd}[2]{{}_\mathcal{#1}\boldsymbol{#2''}}
+
+%Notation of rotation matrices
+\newcommand{\rotmat}[2]{\boldsymbol{#1}_{\mathcal{#2}}}
+
+%Notation of the second derivative of a vector
+\newcommand{\tens}[1]{\underline{\underline{#1}}} %Notation of a tensor
+\newcommand{\vprod}[2]{\vec{#1}\times\vec{#2}} %Vector product
+\newcommand{\inRone}[1]{\in\mathbb{R}^{#1}} %in 1D set of real numbers
+\newcommand{\inRtwo}[2]{\in\mathbb{R}^{#1 \times #2}} %in 2D set of real numbers
+\newcommand{\inRthree}[3]{\in\mathbb{R}^{#1 \times #2 \times #3}} %in 3D set of real numbers
+\newcommand{\ddt}{\frac{d}{dt}} %time derivative of
+\newcommand{\onha}{\frac{1}{2}} %one half
+\newcommand{\onth}{\frac{1}{3}} %one third
+\newcommand{\onfo}{\frac{1}{4}} %one forth
+\newcommand{\prob}[1]{\mathbb{P}(#1)} %Probability of some event
+\newcommand{\expe}[1]{\mathbb{E}[#1]} %Expected value for some stochastic variable
+\newcommand{\var}[1]{\text{Var}(#1)} %Variance of some stochastic variable
+\newcommand{\cov}[1]{\text{Cov}(#1)} %Covariance of some stochastic variables
+\newcommand{\corr}[1]{\text{Corr}(#1)} %Correlation of some stochastic variables
+\newcommand{\sign}[1]{\text{sign}(#1)} %signum function
+\newcommand{\sinc}{\text{sinc}} %sinc function
+\newcommand{\diag}{\text{diag}} %diagonal matrix
+\newcommand{\expnum}[2]{{#1}\cdot 10^{#2}} %exponential number
+
+%----------------------------------------------------------------------------------------------
+%Tables
+%----------------------------------------------------------------------------------------------
+
+\newcommand{\mc}[2]{\multicolumn{1}{#1}{#2}} %This command is a short for multicolumn
+%Usage:
+%Instead of \multicolumn{1}{<type>}{<content>}
+%write \mc{<type>}{<content>}
+%Usecase: When trying to remove vertical lines for only one line in your tabular environment
+%multicolumn can come in handy.
+
+%----------------------------------------------------------------------------------------------
+% Formating
+%----------------------------------------------------------------------------------------------
+
+%Command for inserting [...] into a quote
+\newcommand{\etcetera}{$[\ldots]\ $}
+
+\newcommand{\sbs}[4]{\begin{minipage}[t!]{#1\linewidth}#3\end{minipage}\begin{minipage}[t!]{#2\linewidth}#4\end{minipage}} %Two minipages dividing the page in two scaled parts
+%Usage:
+%\sbs{<width of the left, for example 0.45>}{<width on the right, for example 0.45>}
+%{
+%<content on the left>
+%}
+%{
+%<content on the right>
+%}
+
+\newcommand{\sbss}[2]{\sbs{0.45}{0.45}{#1}{#2}} %Two minipages dividing the page in two equal parts
+%Usage:
+%\sbss
+%{
+%<content on the left>
+%}
+%{
+%<content on the right>
+%}
+
+
+\newcommand{\sbsss}[3]{\begin{minipage}[t!]{0.42\linewidth}#2\end{minipage}\hspace{#1 ex}\begin{minipage}[t!]{0.42\linewidth}#3\end{minipage}} %Two minipages dividing the page in two equal parts with some user-defined space in [ex] in between
+%Usage:
+%\sbsss{5}
+%{
+%<content on the left>
+%}
+%{
+%<content on the right>
+%}
+
+%Easy notation of physical units
+\newcommand{\siu}[1]{[\si{#1}]}
+
+%----------------------------------------------------------------------------------------------
+%Colors
+%----------------------------------------------------------------------------------------------
+\definecolor{pantone2128}{RGB}{152,182,228}
+\definecolor{pantone2727}{RGB}{48,127,226}
+\definecolor{pantone2728}{RGB}{0,71,187}
+\definecolor{darkblue}{RGB}{0,35,156}
+\definecolor{pantone2757}{RGB}{0,30,96}
+
+%----------------------------------------------------------------------------------------------
+%Macros
+%----------------------------------------------------------------------------------------------
+
+\newcommand{\statenotation}{
+\section{Notation}
+\begin{center}
+\begin{tabular}{p{0.3\linewidth}p{0.3\linewidth}l}
+Operator&Meaning&Example\\
+\midrule
+\textit{italic}&scalars&$m$\\
+\textbf{bold letter}&Vector&$\vec{v}$\\
+\textbf{bold capital}&Matrix&$\vec{C}$\\
+Prepended calligraphic letter&Vector or Matrix represented in the coordinate frame $\mathcal{A}$&$\cvec{A}{v}$\\
+Dot above&Time derivative&$\dot{x}$\\
+Prime&General derivative&$f'$\\
+Double underline&Tensor&$\tens{I}$\\
+\midrule
+\end{tabular}
+\end{center}
+}
+%Usage:
+%Type \statenotation where you'd like to define your notation.
+
+%----------------------------------------------------------------------------------------------
+%Listings
+%----------------------------------------------------------------------------------------------
+\usepackage{listings,environ}
+\newcommand{\lsgeneral}{
+\lstset{basicstyle=\ttfamily,
+breaklines=true,%
+showstringspaces=false,%without this there will be a symbol in the places where there is a space
+showspaces=false,% show spaces adding particular underscores
+showtabs=false, % show tabs within strings adding particular underscores
+tabsize=2,
+breaklines=true,
+numbers=left,%
+numberstyle={\tiny \color{black}},% size of the numbers
+numbersep=9pt, % this defines how far the numbers are from the text
+frame=single,
+breakatwhitespace=false,% sets if automatic breaks should only happen at whitespace
+xleftmargin=0.05\textwidth,
+columns=fixed,
+captionpos=b,
+}
+}
+
+\newcommand{\lsmatlab}{
+\lstset{language=Matlab,
+keywordstyle=\color{blue},%
+keywordstyle=[2]{\color{black}},
+identifierstyle=\color{black},%
+stringstyle=\color{blue!20!violet},
+commentstyle=\color{black!30!green},
+backgroundcolor=\color{yellow!20!white},
+}
+}
+
+\lstnewenvironment{TPMatlab}[1][]{
+	\vspace{3ex}
+	\lstset{caption={#1}}
+	\lsgeneral
+	\lsmatlab
+	\centering\minipage{.9\textwidth}%
+}{
+	\endminipage%
+	\vspace{3ex}
+}

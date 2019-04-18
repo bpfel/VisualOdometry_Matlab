@@ -1,0 +1,226 @@
+{  
+   "kitti":{  
+      "localized_harris":{  
+         "rows":4,
+         "cols":5,
+         "radius":4,
+         "npoints":30,
+         "minQuality":0.01,
+         "FilterSize":5
+      },
+      "matching":{  
+         "maxBidirectionalError":3,
+         "radius_to_new_feature":2,
+         "KLT_score_limit":0.9965,
+         "block_size":35
+      },
+      "localization":{  
+         "RANSAC_iteration":1500,
+         "RANSAC_error":4
+      },
+      "triangulation":{  
+         "sanity_check_factor":7,
+         "angle_treshold":1.5,
+         "age_treshold": 8,
+         "pixel_treshold" : 35,
+         "bootframe_distance": 3
+      },
+      "bundle_adjustment":{  
+         "periode":10,
+         "window_size":20,
+         "max_iteration":15
+      }
+   },
+   "malaga":{  
+      "localized_harris":{  
+         "rows":4,
+         "cols":5,
+         "radius":4,
+         "npoints":40,
+         "minQuality":0.01,
+         "FilterSize":25
+      },
+      "matching":{  
+         "maxBidirectionalError":2.7,
+         "radius_to_new_feature":4,
+         "KLT_score_limit":0.997,
+         "block_size":31
+      },
+      "localization":{  
+         "RANSAC_iteration":3000,
+         "RANSAC_error":3.5
+      },
+      "triangulation":{  
+         "sanity_check_factor":7,
+         "angle_treshold":1.5,
+         "age_treshold": 10,
+         "pixel_treshold" : 35,
+         "bootframe_distance": 4
+      },
+      "bundle_adjustment":{  
+         "periode":10,
+         "window_size":20,
+         "max_iteration":20
+      }
+   },
+   "parking":{  
+      "localized_harris":{  
+         "rows":3,
+         "cols":3,
+         "radius":6,
+         "npoints":30,
+         "minQuality":0.05,
+         "FilterSize":11
+      },
+      "matching":{  
+         "maxBidirectionalError":2.8,
+         "radius_to_new_feature":5,
+         "KLT_score_limit":0.996,
+         "block_size":31
+      },
+      "localization":{  
+         "RANSAC_iteration":2000,
+         "RANSAC_error":8
+      },
+      "triangulation":{  
+         "sanity_check_factor":7,
+         "angle_treshold":5,
+         "age_treshold": 8,
+         "pixel_treshold" : 35,
+         "bootframe_distance": 4
+      },
+      "bundle_adjustment":{  
+         "periode":5,
+         "window_size":12,
+         "max_iteration":20
+      }
+   },
+   "bike_straight":{  
+      "localized_harris":{  
+         "rows":3,
+         "cols":4,
+         "radius":10,
+         "npoints":45,
+         "minQuality":0.01,
+         "FilterSize":3
+      },
+      "matching":{  
+         "maxBidirectionalError":3,
+         "radius_to_new_feature":2,
+         "KLT_score_limit":0.9965,
+         "block_size":31
+      },
+      "localization":{  
+         "RANSAC_iteration":1000,
+         "RANSAC_error":10
+      },
+      "triangulation":{  
+         "sanity_check_factor":7,
+         "angle_treshold":2,
+         "age_treshold": 8,
+         "pixel_treshold" : 35,
+         "bootframe_distance": 7
+      },
+      "bundle_adjustment":{  
+         "periode":5,
+         "window_size":12,
+         "max_iteration":20
+      }
+   },
+   "fpv1":{  
+      "localized_harris":{  
+         "rows":4,
+         "cols":5,
+         "radius":4,
+         "npoints":30,
+         "minQuality":0.01,
+         "FilterSize":15
+      },
+      "matching":{  
+         "maxBidirectionalError":2.8,
+         "radius_to_new_feature":2,
+         "KLT_score_limit":0.997,
+         "block_size":25
+      },
+      "localization":{  
+         "RANSAC_iteration":1000,
+         "RANSAC_error":5
+      },
+      "triangulation":{  
+         "sanity_check_factor":7,
+         "angle_treshold":1.5,
+         "age_treshold": 8,
+         "pixel_treshold" : 35,
+         "bootframe_distance": 7
+      },
+      "bundle_adjustment":{  
+         "periode":8,
+         "window_size":16,
+         "max_iteration":20
+      }
+   },
+   "fpv2":{  
+      "localized_harris":{  
+         "rows":4,
+         "cols":5,
+         "radius":4,
+         "npoints":30,
+         "minQuality":0.01,
+         "FilterSize":5
+      },
+      "matching":{  
+         "maxBidirectionalError":2.8,
+         "radius_to_new_feature":2,
+         "KLT_score_limit":0.997,
+         "block_size":35
+      },
+      "localization":{  
+         "RANSAC_iteration":1000,
+         "RANSAC_error":5
+      },
+      "triangulation":{  
+         "sanity_check_factor":7,
+         "angle_treshold":1.5,
+         "age_treshold": 8,
+         "pixel_treshold" : 35,
+         "bootframe_distance": 7
+      },
+      "bundle_adjustment":{  
+         "periode":8,
+         "window_size":16,
+         "max_iteration":20
+      }
+   },
+   "fpv3":{  
+      "localized_harris":{  
+         "rows":4,
+         "cols":5,
+         "radius":4,
+         "npoints":40,
+         "minQuality":0.01,
+         "FilterSize":5
+      },
+      "matching":{  
+         "maxBidirectionalError":2.9,
+         "radius_to_new_feature":5,
+         "KLT_score_limit":0.997,
+         "block_size":25
+      },
+      "localization":{  
+         "RANSAC_iteration":1000,
+         "RANSAC_error":5
+      },
+      "triangulation":{  
+         "sanity_check_factor":7,
+         "angle_treshold":1.5,
+         "age_treshold": 8,
+         "pixel_treshold" : 35,
+         "bootframe_distance": 7
+      },
+      "bundle_adjustment":{  
+         "periode":8,
+         "window_size":16,
+         "max_iteration":20
+      }
+   }
+}

@@ -1,0 +1,185 @@
+%This file contains all new environments simplifying LaTeX text editing
+%For each new environment clearly document its dependencies (packages) and its use
+%Adhere to the ordering by category!
+
+%----------------------------------------------------------------------------------------------
+%Tables
+%----------------------------------------------------------------------------------------------
+\NewDocumentEnvironment{TTable}{O{1}mmmm} %Defines a basic tabular environment
+{
+\begin{table}[H]
+\centering
+\def\counter{#1}
+\if\counter2
+\rowcolors{#1}{gray!25}{white}
+\else
+\rowcolors{#1}{white}{gray!25}
+\fi
+\begin{tabular}{#2}
+\toprule
+}
+{
+\bottomrule
+\end{tabular}
+\caption[#3]{#4}
+\label{#5}
+\end{table}
+}
+%Usage:
+%\begin{TTable}[<startindex for colors>]
+%{<table layout>}
+%{<your short caption>}
+%{<your caption>}
+%{<your label>}
+%<your Content>
+%\end{TTable}
+%Dependencies: \usepackage{booktabs,xcolors,xparse}
+
+
+
+\NewDocumentEnvironment{TTable*}{mmmm} %Defines a basic tabular environment
+{
+\begin{table}[H]
+\centering
+\begin{tabular}{#1}
+\toprule
+}
+{
+\bottomrule
+\end{tabular}
+\caption[#2]{#3}
+\label{#4}
+\end{table}
+}
+%Usage:
+%\begin{TTable*}{<table layout>}
+%{<your short caption>}
+%{<your caption>}
+%{<your label>}
+
+%<your Content>
+
+%\end{TTable*}
+
+
+\NewDocumentEnvironment{TTableNonFloat*}{m} %Defines a basic tabular environment
+{
+\begin{center}
+\begin{tabular}{#1}
+\toprule
+}
+{
+\bottomrule
+\end{tabular}
+\end{center}
+}
+%Usage:
+%\begin{TTable*}{<table layout>}
+%{<your short caption>}
+%{<your caption>}
+%{<your label>}
+
+%<your Content>
+
+%\end{TTable*}
+
+
+\NewDocumentEnvironment{TDefinitionTable*}{} %Used to define variables in an equation
+{
+\rowcolors{1}{gray!25}{white}
+\footnotesize
+\renewcommand{\arraystretch}{1.3}
+\begin{center}
+\begin{tabular}{lll}
+}
+{
+\end{tabular}
+\end{center}
+\normalsize
+}
+%Usage:
+%\begin{TDefinitionTable}
+%$\vect{P}$&change of linear momentum &in& $\si{\kilo\gram\meter\per\second\squared}$\\
+%$m$&mass&in&$\si{\kilo\gram}$\\
+%$\vec{a}$&acceleration&in&$\si{\meter\per\second\squared}$\\
+%$\vec{F}$&resultant force&in&$\si{N}=\si{\kilo\gram\meter\per\second\squared}$
+%\end{TDefinitionTable}
+
+\NewDocumentEnvironment{TValueTable}{} %Used to introduce a series of parameters with certain values
+{
+\footnotesize
+\begin{center}
+\begin{tabular}{r@{ = }lr}
+}
+{
+\end{tabular}
+\end{center}
+\normalsize
+}
+%Usage:
+%\begin{TValueTable}
+%$h_E$&$\SI{32}{\milli\meter}$&Extension of the brakes\\
+%$h_p$&$\SI{32}{\milli\meter}$&Height of a single plate\\
+%$l_B$&$\SI{80}{\milli\meter}$&Width of one brake\\
+%$n_p$&$l_B/l_p=\SI{5}{}$&Number of plates\\
+%$A_p$&$h_p\cdot l_p\cdot n_p=\SI{25.6}{\centi\meter\squared}$&Total area of the plates\\
+%$A_c$&$\SI{26.8}{\centi\meter\squared}$&Actual area of the brake
+%\end{TValueTable}
+
+%To read a csv sheet
+\newcommand{\resulttable}[5]{
+\csvloop{
+file=#1,
+no head,
+column count=#2,
+before reading=\begin{table}[H]\caption{#4}\label{#5}\rowcolors{2}{white}{gray!25}\begin{longtable}{|*{#2}{l|}}\hline,
+command=\csvlinetotablerow,
+late after line=\if\thecsvrow #3
+\\\hline\hline
+\else
+\\
+\fi,
+after reading=\hline\end{longtable}\end{table}
+}
+}
+%Usage:
+%1. Create your table on gdocs. It is possible to use latex syntax in the table!
+%2. File -> Download as -> Comma seperated values (.csv)
+%3. Place your file in the same folder as your .tex file
+%4. Use the command as follows:
+%\resulttable
+%{<filename>.csv}
+%{<number of columns>}
+%{<number of head lines + 1>}
+%{<caption of your table>}
+%{<label of your table>}
+%
+%For example:
+%
+%\resulttable{Sheet1.csv}%Filename
+%{5}%Number of columns
+%{4}%Number of head lines + 1
+%{TESTID\_EXPERIMENTID\_YYMMDD}%Experiment ID
+%{label}
+
+
+
+%----------------------------------------------------------------------------------------------
+%Appendices
+%----------------------------------------------------------------------------------------------
+\NewDocumentEnvironment{singlePDFpage}{mmm}
+{
+\includepdf[pages=-,scale=.75,pagecommand={
+\subsection{#1}\label{#2}
+},linktodoc=true]
+{appendix/#3}
+}
+
+\NewDocumentEnvironment{multiPDFpage}{mmm}
+{
+\includepdf[pages=1,scale=.75,pagecommand={
+\subsection{#1}\label{#2}
+},linktodoc=true]
+{appendix/#3}}
+{\includepdf[pages=2-,scale=0.85,pagecommand={},linktodoc=true]{appendix/#3}
+}

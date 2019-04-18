@@ -1,0 +1,21 @@
+[rawlog-edit] Operation to perform: info
+[rawlog-edit] Opening 'malaga-urban-dataset-extract-07_all-sensors.rawlog'...
+[rawlog-edit] Open OK.
+[rawlog-edit] Warning: No external storage directory was found (not an issue if the rawlog does not contain delayed-load images).
+Progress:   18197 objects --- Pos:   39.92 MB/>  25.01 MB Progress:   37501 objects --- Pos:   82.31 MB/>  25.01 MB 
+Time to parse file (sec)          : 0.553738
+Physical file size                : 25.01 MB
+Uncompressed file size            : 90.90 MB
+Compression ratio                 : 27.52%
+Overall number of objects         : 41410
+Actions/SensoryFrame format       : No
+Observations format               : Yes
+All sensor labels                 : CAMERA1, GPS_DELUO, HOKUYO1, HOKUYO2, HOKUYO3, LASER1, LASER2, XSensMTi
+Sensor (Label/Occurs/Rate/Durat.) :         CAMERA1 /   2121 /20.000 /106.001
+Sensor (Label/Occurs/Rate/Durat.) :       GPS_DELUO /    212 /2.010 /105.000
+Sensor (Label/Occurs/Rate/Durat.) :         HOKUYO1 /   4232 /39.903 /106.033
+Sensor (Label/Occurs/Rate/Durat.) :         HOKUYO2 /   4241 /39.985 /106.039
+Sensor (Label/Occurs/Rate/Durat.) :         HOKUYO3 /   4242 /40.004 /106.015
+Sensor (Label/Occurs/Rate/Durat.) :          LASER1 /   7952 /74.977 /106.046
+Sensor (Label/Occurs/Rate/Durat.) :          LASER2 /   7805 /73.591 /106.046
+Sensor (Label/Occurs/Rate/Durat.) :        XSensMTi /  10605 /100.001 /106.039

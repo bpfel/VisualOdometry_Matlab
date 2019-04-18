@@ -1,0 +1,16 @@
+*.m~ 
+*.asv 
+*.log 
+*.aux 
+*.synctex.gz 
+*.toc 
+*.out
+*.bcf
+*.glg
+*.glo
+*.gls
+*.glsdefs
+*.ist
+*.lof
+*.lol
+*.*~

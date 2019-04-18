@@ -1,0 +1,30 @@
+# (This file is loadable from rawlog-edit and other MRPT tools)
+# ---------------------------------------------------------------------
+
+# Left camera calibration parameters:
+[CAMERA_LEFT]
+resolution=[1024 768]
+cx=517.12973
+cy=395.59665
+fx=795.11588
+fy=795.11588
+dist=[0.000000e+000 0.000000e+000 0.000000e+000 0.000000e+000 0.000000e+000]
+focal_length=2.000000e-03
+
+
+# Right camera calibration parameters:
+[CAMERA_RIGHT]
+resolution=[1024 768]
+cx=517.12973
+cy=395.59665
+fx=795.11588
+fy=795.11588
+dist=[0.000000e+000 0.000000e+000 0.000000e+000 0.000000e+000 0.000000e+000]
+focal_length=2.000000e-03
+
+# Relative pose of the right camera wrt to the left camera:
+
+[CAMERA_LEFT2RIGHT_POSE]
+pose_quaternion=[0.119471 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000]
+
+
