@@ -1,5 +1,4 @@
 # Contributors
---------------
 
 * [GianAndrea Müller](https://github.com/bpfel) - muellegi@student.ethz.ch
 
