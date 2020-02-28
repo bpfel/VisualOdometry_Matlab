@@ -1,3 +1,14 @@
+# Contributors
+--------------
+
+* [GianAndrea Müller](https://github.com/bpfel) - muellegi@student.ethz.ch
+
+* [Kamil Ritz](https://github.com/kamilritz) - kritz@student.ethz.ch
+
+* [Luca Somm]() - somml@student.ethz.ch
+
+* [Christian Sprecher](https://github.com/christiansprecher) - cspreche@student.ethz.ch
+
 # Code of Conduct
 
 1. Feature-oriented commits and descriptive commit messages.
